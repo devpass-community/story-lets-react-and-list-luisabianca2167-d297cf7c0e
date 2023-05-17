@@ -1,4 +1,5 @@
 import Container from './components/Container';
+import { dataProduct } from '../src/products.json'
 
 const Item = ({ item }) => {
   return (
@@ -17,7 +18,9 @@ function App() {
   return (
     <Container>
       <ul className='list' data-testid='product-list'>
-        { /* TODO */ }
+        {dataProduct.map((item) => {
+          return <li>{item.category.filter("smartphones")}</li>
+        })}
         <Item />
       </ul>
     </Container>
